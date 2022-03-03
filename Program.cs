@@ -12,24 +12,25 @@ namespace SolarSystem
         static void Command()
         {
             string command;
-            ArrayList galaxies = new ArrayList();
-            ArrayList stars = new ArrayList();
-            ArrayList planets = new ArrayList();
-            ArrayList moons = new ArrayList();
+           
             ArrayList comms = new ArrayList();
             while (true)
             {
                 command = Console.ReadLine();
                 if (command.Equals("exit"))
                 {
-                    Print(galaxies,stars,planets,moons,comms);
+                    Print(comms);
                     break;
                 }
                 comms.Add(command);
             }
         }
-        static void Print(ArrayList galaxies,ArrayList stars,ArrayList planets,ArrayList moons,ArrayList comms) 
+        static void Print(ArrayList comms) 
         {
+            ArrayList galaxies = new ArrayList();
+            ArrayList stars = new ArrayList();
+            ArrayList planets = new ArrayList();
+            ArrayList moons = new ArrayList();
             foreach (string command in comms) {
                 string commandType = "";
                 if (command.IndexOf('[') > 0)
